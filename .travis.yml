@@ -4,6 +4,6 @@ python:
 # command to install dependencies
 install: 
   - "pip3 install https://github.com/Capitains/HookTest/archive/console.zip"
-  - "pip3 install prettytable"
+#  - "pip3 install prettytable" this should now be installed by setup.py
 # command to run tests
 script: hooktest --scheme epidoc --workers 3 --travis --countword ./
