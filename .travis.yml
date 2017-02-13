@@ -2,6 +2,8 @@ language: python
 python:
   - "3.5"
 # command to install dependencies
-install: "pip3 install https://github.com/Capitains/HookTest/archive/console.zip"
+install: 
+  - "pip3 install https://github.com/Capitains/HookTest/archive/console.zip"
+  - "pip3 install prettytable"
 # command to run tests
 script: hooktest --scheme epidoc --workers 3 --travis ./
