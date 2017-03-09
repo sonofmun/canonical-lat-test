@@ -6,7 +6,7 @@ install:
 script: hooktest --scheme epidoc --workers 3 --travis --countword ./
 after_failure: 
 - hooktest-build --travis ./
-- echo $?
+- ls data/
 deploy:
   provider: releases
   api_key:
