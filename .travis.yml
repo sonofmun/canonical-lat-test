@@ -17,3 +17,4 @@ deploy:
   on:
     repo: sonofmun/canonical-lat-test
     branch: master
+    condition: '$? = "0" || $? = "1"'
