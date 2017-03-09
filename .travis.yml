@@ -5,17 +5,6 @@ install:
 - pip3 install https://github.com/Capitains/HookTest/archive/console.zip
 script: hooktest --scheme epidoc --workers 3 --travis --countword ./
 after_failure: hooktest-build --travis ./
-  deploy:
-    provider: releases
-    api_key:
-      secure: p4hNyfw2leN6IM8tOPsB5FRdpvKCBqzi2HLXvT04ajIylwdXN+OeaQSvVC9SpK9Eu7WQxuBRc/imZGevzE667ch4JtXvxVG0NQ5ezt8FWIgZAYGIjusVYCIVWRGf8gLhW1tHaBkxchugs2Sw+eu1NpQLlSmYBkesSTCBXB0/aXtbU8aRmKJuUAtytWXc5AampM5+5w6chRn8TPVmS5zf0bQufL3vXso2jrMW5AENlhFc0BbT3RLg6ESb6yulnUh2rl4mbf+yi9iWL0brLMjMF5BmRXtYAxoR4fhHlq5/cV+Bn4mNqxt6bT+Dj/4YEpRYTQ2ZC5EFul/n7aChIu06YOgw2U1YUxMJyxLvSkHT9YyUIy+bO6Pth/QfOUFQ5UFoQpv9oVJSXSeP3LujcrJgblabnX+df5lw7McaSRs/dLIY8QPbea7h8N5eo/rDrRR06PXpg+bnrCjQtnwDv0h59HXl+sIBCDb9FrTiNbFzgXljpTfjhGE1jhy2tUzm20qLAmOacCVo6ttpHlxDF81vsN3WRe45LDYisE5UESXlZrcTLB0eW+YlNvXdPq8vfFq+2KA21r1wB7coUKYz/hv+PCPeqnbS6rnJQYg4O1/9DMMxhgTVZJ/4uf4B8zhfHgcIo9QhYH36BmOkQBq8Xl3iMy937f4BWsmBIoi0Ee93J20=
-    file_glob: true
-    file: ./*
-    skip_cleanup: true
-    on:
-      repo: sonofmun/canonical-lat-test
-      branch: master
-      tags: true
 deploy:
   provider: releases
   api_key:
@@ -26,4 +15,3 @@ deploy:
   on:
     repo: sonofmun/canonical-lat-test
     branch: master
-    tags: true
