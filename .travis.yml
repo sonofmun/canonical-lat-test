@@ -3,19 +3,16 @@ python:
 - '3.5'
 install:
 - pip3 install https://github.com/Capitains/HookTest/archive/console.zip
-matrix:
-  allow_failures:
-    - python: '3.5'
 script: hooktest --scheme epidoc --workers 3 --travis --countword ./
-after_failure: 
+after_failure:
 - hooktest-build --travis ./
 deploy:
   provider: releases
   api_key:
-    secure: p4hNyfw2leN6IM8tOPsB5FRdpvKCBqzi2HLXvT04ajIylwdXN+OeaQSvVC9SpK9Eu7WQxuBRc/imZGevzE667ch4JtXvxVG0NQ5ezt8FWIgZAYGIjusVYCIVWRGf8gLhW1tHaBkxchugs2Sw+eu1NpQLlSmYBkesSTCBXB0/aXtbU8aRmKJuUAtytWXc5AampM5+5w6chRn8TPVmS5zf0bQufL3vXso2jrMW5AENlhFc0BbT3RLg6ESb6yulnUh2rl4mbf+yi9iWL0brLMjMF5BmRXtYAxoR4fhHlq5/cV+Bn4mNqxt6bT+Dj/4YEpRYTQ2ZC5EFul/n7aChIu06YOgw2U1YUxMJyxLvSkHT9YyUIy+bO6Pth/QfOUFQ5UFoQpv9oVJSXSeP3LujcrJgblabnX+df5lw7McaSRs/dLIY8QPbea7h8N5eo/rDrRR06PXpg+bnrCjQtnwDv0h59HXl+sIBCDb9FrTiNbFzgXljpTfjhGE1jhy2tUzm20qLAmOacCVo6ttpHlxDF81vsN3WRe45LDYisE5UESXlZrcTLB0eW+YlNvXdPq8vfFq+2KA21r1wB7coUKYz/hv+PCPeqnbS6rnJQYg4O1/9DMMxhgTVZJ/4uf4B8zhfHgcIo9QhYH36BmOkQBq8Xl3iMy937f4BWsmBIoi0Ee93J20=
+    secure: ubd/rbV+wiDsN1m4QFwI1Bu8i5/SolcGXDbWzViOKLJRfn0TLHSs/ko02Klt6nDyTn7uN3S//RtFRPP4YrnnoEsv5Vv/hsXjB43cm2Qvk7Y3kVsN4eWYvWkImQM0VWfbEal/dfctLQ7dNVl9xkX6N9kStXU4eqJwRgv1+INfhserAc67RHc+916WW3DWZmvC+QoxuV4XANtA8pjmXXnZ8bH2T7XGcKmqoUkO1NKRmz5ZseSftdBQ6TirUOl3hZHRObp6CGRfHiFe1u2nrZESq4qhirir0yITCuWb/+c2vm5EcjC6AM/IQ6hzKWJeu3rm9EyHblkgVit6irDmZvvCs5MXCtYO1A8kUSt/S1zFFExB5oUh9uMDz9Xc5GmcmYsGhMlATVkxgdl/Tn3iZ+6QF+tn+mTMn7NxrAFpS5v9iLbx29j4sPEBJU9fD9WmvyrjRgwxAj7kjEzpFwzkE40B+1IHXKxYK/4zW9WoHPbjwZoqyTYRllJkryfcIJLnY4PkBmiRYxjGPjZBrtq31BPRFjLidnTQxXnh29v4//gHWCVLqdjfuFRVEqqqzs2iS4QgqrUbcMNRk3Ccfqt8b6yyoywa1lZRF5xS+YnNX/G/G1/cCnHgK7dUpSw8VacqCSLSP3R+iY9amFvsi+o7LDpFLtHcz6x/nsgCjyNCwR4GRXU=
   file_glob: true
-  file: ./*
+  file: "./*"
   skip_cleanup: true
   on:
     repo: sonofmun/canonical-lat-test
-    tags: true
+    tag: true
