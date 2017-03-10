@@ -1,4 +1,0 @@
-data/phi0448/__cts__.xml
-data/phi0448/phi001/__cts__.xml
-data/phi0448/phi001/phi0448.phi001.perseus-eng2.xml
-data/phi0448/phi001/phi0448.phi001.perseus-lat2.xml
