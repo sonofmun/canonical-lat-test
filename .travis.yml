@@ -7,9 +7,9 @@ matrix:
 install:
 - pip3 install https://github.com/Capitains/HookTest/archive/console.zip
 script: hooktest --scheme epidoc --workers 3 --travis --countword ./
-after_failure:
+before_deploy:
 - hooktest-build --travis ./
-before_deploy: tar -cf release.tar.gz ./
+- tar -cf release.tar.gz ./
 deploy:
   provider: releases
   api_key:
@@ -18,4 +18,4 @@ deploy:
   skip_cleanup: true
   on:
     repo: sonofmun/canonical-lat-test
-    tags: true
+    branch: master
