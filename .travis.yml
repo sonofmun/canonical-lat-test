@@ -9,7 +9,7 @@ install:
 script: hooktest --scheme epidoc --workers 3 --travis --countword ./
 after_failure:
 - hooktest-build --travis ./
-before_deploy: tar -cf release.tar.gz ./data/
+before_deploy: tar -cf release.tar.gz ./
 deploy:
   provider: releases
   api_key:
@@ -18,4 +18,4 @@ deploy:
   skip_cleanup: true
   on:
     repo: sonofmun/canonical-lat-test
-    branch: master
+    tags: true
