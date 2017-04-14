@@ -3,7 +3,7 @@ python:
 - '3.5'
 install:
 - pip3 install https://github.com/Capitains/HookTest/archive/from-travis-to-hooktest.zip
-script: hooktest --scheme epidoc --workers 3 --verbose --travis --countword --allowfailure ./ --from_travis_to_hook "http://herculanum.algorythme.net/api/hook/v2.0/user/repositories/sonofmun/canonical-lat-test"
+script: hooktest --scheme epidoc --workers 3 --verbose --travis --countword --allowfailure ./ --from_travis_to_hook "http://ci-staging.perseids.org/api/hook/v2.0/user/repositories/sonofmun/canonical-lat-test"
 before_deploy:
 - hooktest-build --travis ./
 - results=$(cat manifest.txt)
