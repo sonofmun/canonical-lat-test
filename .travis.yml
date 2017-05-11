@@ -14,8 +14,7 @@ before_deploy:
 - git tag $GIT_TAG -a -m "$DATE" -m "PASSING FILES" -m "$results"
 - git push -q https://$GITPERM@github.com/sonofmun/canonical-lat-test refs/tags/$GIT_TAG
 - ls -R
-- pwd
-- rm -rf ./data/
+- rm -rf $TRAVIS_BUILD_DIR/data/
 
 deploy:
   provider: releases
