@@ -13,6 +13,8 @@ before_deploy:
 - export GIT_TAG=$major_version.$minor_version.$TRAVIS_BUILD_NUMBER
 - git tag $GIT_TAG -a -m "$DATE" -m "PASSING FILES" -m "$results"
 - rm -rf $TRAVIS_BUILD_DIR/data/
+- git add -A
+- git commit -m "Passing files in build directory"
 - git push -q https://$GITPERM@github.com/sonofmun/canonical-lat-test refs/tags/$GIT_TAG
 - ls -R
 
