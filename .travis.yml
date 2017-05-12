@@ -12,7 +12,7 @@ before_deploy:
 - git config --global user.name "Travis CI"
 - export GIT_TAG=$major_version.$minor_version.$TRAVIS_BUILD_NUMBER
 - git add -A
-- git rm --cached =1.0.0
+- git rm --cached =1.0.0 .gitignore .travis.yml
 - git commit -m "Removed failing files" -m "Release $GIT_TAG"
 - git tag $GIT_TAG -a -m "$DATE" -m "PASSING FILES" -m ""
 - git push -q https://$GITPERM@github.com/sonofmun/canonical-lat-test refs/tags/$GIT_TAG
