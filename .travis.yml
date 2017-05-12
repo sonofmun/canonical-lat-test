@@ -11,7 +11,9 @@ before_deploy:
 - git config --global user.email "builds@travis-ci.com"
 - git config --global user.name "Travis CI"
 - export GIT_TAG=$major_version.$minor_version.$TRAVIS_BUILD_NUMBER
-- git tag $GIT_TAG -a -m "$DATE" -m "PASSING FILES" -m "<a href="https://github.com/sonofmun/canonical-lat-test/blob/$GIT_TAG/manifest.txt">Passing Files</a>"
+- git add -A
+- git commit -m "Removed failing files" -m "Release $GIT_TAG"
+- git tag $GIT_TAG -a -m "$DATE" -m "PASSING FILES" -m ""
 - git push -q https://$GITPERM@github.com/sonofmun/canonical-lat-test refs/tags/$GIT_TAG
 - ls -R
 
