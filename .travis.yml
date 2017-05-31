@@ -6,7 +6,7 @@ install:
 - pip3 install MyCapytain
 script: hooktest ./ --console table --scheme epidoc --workers 3 --verbose 5 --manifest --countword --allowfailure --hookUI "http://ci.perseids.org/api/hook/v2.0/user/repositories/sonofmun/canonical-lat-test"
 before_deploy:
-- hooktest-build --travis ./
+- hooktest-build --travis --txt ./
 - results=$(cat manifest.txt)
 - DATE=`date +%Y-%m-%d`
 - git config --global user.email "builds@travis-ci.com"
@@ -22,7 +22,6 @@ deploy:
   provider: releases
   api_key:
     secure: ubd/rbV+wiDsN1m4QFwI1Bu8i5/SolcGXDbWzViOKLJRfn0TLHSs/ko02Klt6nDyTn7uN3S//RtFRPP4YrnnoEsv5Vv/hsXjB43cm2Qvk7Y3kVsN4eWYvWkImQM0VWfbEal/dfctLQ7dNVl9xkX6N9kStXU4eqJwRgv1+INfhserAc67RHc+916WW3DWZmvC+QoxuV4XANtA8pjmXXnZ8bH2T7XGcKmqoUkO1NKRmz5ZseSftdBQ6TirUOl3hZHRObp6CGRfHiFe1u2nrZESq4qhirir0yITCuWb/+c2vm5EcjC6AM/IQ6hzKWJeu3rm9EyHblkgVit6irDmZvvCs5MXCtYO1A8kUSt/S1zFFExB5oUh9uMDz9Xc5GmcmYsGhMlATVkxgdl/Tn3iZ+6QF+tn+mTMn7NxrAFpS5v9iLbx29j4sPEBJU9fD9WmvyrjRgwxAj7kjEzpFwzkE40B+1IHXKxYK/4zW9WoHPbjwZoqyTYRllJkryfcIJLnY4PkBmiRYxjGPjZBrtq31BPRFjLidnTQxXnh29v4//gHWCVLqdjfuFRVEqqqzs2iS4QgqrUbcMNRk3Ccfqt8b6yyoywa1lZRF5xS+YnNX/G/G1/cCnHgK7dUpSw8VacqCSLSP3R+iY9amFvsi+o7LDpFLtHcz6x/nsgCjyNCwR4GRXU=
-  #file: release.tar.gz
   skip_cleanup: true
   on:
     repo: sonofmun/canonical-lat-test
