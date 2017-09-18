@@ -6,7 +6,7 @@ python:
 install:
   - pip3 install HookTest>=1.0.0
 
-script: java -jar jingtrang/jing.jar
+script: java -jar ~/virtualenv/python3.5/lib/python3.5/site-packages/jingtrang/jing.jar
 
 before_deploy:
   - hooktest-build --travis --txt ./
